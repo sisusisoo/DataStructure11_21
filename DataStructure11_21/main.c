@@ -2,10 +2,11 @@
 #include <stdlib.h>
 #define MAX 20
 
-int count,once;
 
-int move_count;
-int list_count[2];
+
+int count,once;//once는 20번 반복중에 한번만 print하게 
+int move_count;//이동 카운트
+int list_count[2];//비교 횟수와 이동횟수 
 int select_total,select_total_move;
 
 
@@ -27,7 +28,7 @@ void selection_sort(int list[], int n) {
 	count = 0;
 	move_count = 0;
 	temp = 0;
-	
+	//선택정렬 코드 
 	for (i = 0; i < n - 1; i++) {
 		least = i;
 		for (j = i + 1; j < n; j++) {
@@ -35,6 +36,7 @@ void selection_sort(int list[], int n) {
 			count++;
 		}
 		//swap(list[i], list[least], temp);
+		//자리 바꾸기 기능 
 		temp = list[i];
 		list[i] = list[least];
 		list[least] = temp;
@@ -50,6 +52,8 @@ void selection_sort(int list[], int n) {
 	once = 1;
 }
 
+
+//첨에만 프린트 되게함 
 void selecet_cycle_print_Ver() {
 	int i;
 
@@ -78,6 +82,7 @@ void selecet_cycle_print_Ver() {
 	printf("싸이클 끝\n");
 
 }
+//프린트안하고 평균 내는 메서드 
 void selecet_cycle() {
 	int i;
 
